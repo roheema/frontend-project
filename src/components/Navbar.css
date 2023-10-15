@@ -1,0 +1,60 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Playfair+Display+SC:wght@900&display=swap');
+.nav-container{
+  width: 100%;
+  display: flex;
+  padding: 10px;
+  align-items: center;
+  padding-top: 1.2rem;
+  padding-left: 5%;
+  padding-right: 5%;
+  border-bottom: 1px solid #26BDD2;
+}
+li, a{
+  list-style: none;
+  text-decoration: none;
+  color: black;
+  font-family: Montserrat;
+}
+.nav-logo{
+  color: #26BDD2;
+  font-family: Playfair Display SC;
+  font-weight: 900;
+ 
+}
+ul{
+  width: 60%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+  font-family: Montserrat;
+  font-weight: 500;
+  padding: 10px;
+  margin-left: 10%;
+
+}
+.started{
+  width: 30%;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 10%;
+}
+a.clicker{
+    background-color: #26BDD2;
+    color: white;
+    font-size: 18px;
+    font-family: Montserrat;
+    font-weight: 500;  
+    padding: 10px;
+    border-radius: 7px;
+}
+a.clicker:hover{
+  box-shadow: 5px 3px #888888;
+}
+a.signing{
+    padding: 10px;
+}
+a.signing:hover{
+    border: 2px solid;
+    border-radius: 10px;
+}
