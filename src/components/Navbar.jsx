@@ -13,8 +13,8 @@ const Navbar = () => {
             <li><a href="">Contact</a></li>
         </ul>
         <p className='started'>
-            <a className='clicker' href="">Get Started</a>
-            <a className='signing' href="">Sign In</a>
+            <a className='clicker' href="/signup">Get Started</a>
+            <a className='signing' href="/signin">Sign In</a>
         </p>
     </div>
   )

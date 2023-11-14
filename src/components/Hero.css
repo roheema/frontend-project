@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Playfair+Display+SC:wght@900&display=swap');
 .hero-container{
-    width: 98%;
+    width: 100%;
     display: flex;
     justify-content: center;
     padding-top: 3%;

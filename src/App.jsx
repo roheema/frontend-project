@@ -1,17 +1,26 @@
 import React from 'react'
 import './App.css'
-import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import All from './components/All'
-
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import SignUp from './components/SignUp'
+import SignIn from './components/SignIn'
+import Home from './Home';
+import { Toaster } from 'react-hot-toast';
 const App = () => {
   return (
-    
     <>
-    <Navbar/>
-    <Hero/>
-    <All/>
+    <Toaster/>
+      <BrowserRouter>
+      
+      <Routes>
+        <Route path="/signup" element={<SignUp/>}/>
+        <Route path="/signin" element={<SignIn/>}/>
+        <Route path="/" element={<Home/>}/>
+      </Routes>
+      </BrowserRouter>
+      
     
+    
+
     </>
   )
 }

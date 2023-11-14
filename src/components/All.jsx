@@ -1,6 +1,5 @@
 import React from 'react'
 import './All.css'
-import Footer from './Footer'
 import img1 from '../assets/images/Frame 13.png'
 import img2 from '../assets/images/ep_view.png'
 import img3 from '../assets/images/Ellipse 1.png'
@@ -82,22 +81,7 @@ const All = () => {
                 </div>
             </div>
         </div>
-        <div className="popular1">
-                <h3>Popular</h3>
-                <p className='construction3'>Sports</p>
-            </div>
-            <CarouselComponent/>
-            <div className="popular1">
-                <h3>Popular</h3>
-                <p className='construction4'>Health Care</p>
-            </div>
-            <CarouselComponent2/>
-            <div className="popular1">
-                <h3>Popular</h3>
-                <p className='construction5'>Entertainment</p>
-            </div>
-            <CarouselComponent3/>
-            <Footer/>
+     
     </div>
   )
 }

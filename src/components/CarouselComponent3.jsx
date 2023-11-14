@@ -1,5 +1,5 @@
 import React from 'react';
-import './CarouselComponent.css'
+
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
@@ -14,7 +14,7 @@ const descriptions = [
 const CarouselComponent3 = () => (
   <Swiper
     modules={[Navigation, Pagination, Scrollbar, A11y]}
-    spaceBetween={50}
+    spaceBetween={15}
     slidesPerView={2.5}
     onSwiper={(swiper) => console.log(swiper)}
     onSlideChange={() => console.log('slide change')}
@@ -24,7 +24,7 @@ const CarouselComponent3 = () => (
       <div>
       <div className='swiper'><img src="/src/assets/images/Frame 30 (1).png" alt="Image 1" /></div>
       <div><p>viewsimg</p></div>
-      <h5>'Intermittent Fasting: Is It the Right Approach for Weight Loss and...'</h5>
+      <h3>From Harry Potter to Dune: A  Journey into the World of Book...</h3>
       <p className='description'>{descriptions}</p>
       </div>
     </SwiperSlide>
@@ -32,7 +32,7 @@ const CarouselComponent3 = () => (
       <div>
       <div className='swiper'><img src="/src/assets/images/Frame 30 (3).png" alt="Image 2" /></div>
       <div><p>viewsimg</p></div>
-      <h5>Intermittent Fasting: Is It the Right Approach for Weight Loss and...</h5>
+      <h3>The Art of Stand-Up Comedy: A Look at the Craft of Making ...</h3>
       <p className='description'>{descriptions}</p>
       </div>
     </SwiperSlide>
@@ -40,7 +40,7 @@ const CarouselComponent3 = () => (
       <div>
       <div className='swiper'><img src="/src/assets/images/Frame 30 (4).png" alt="Image 3" /></div>
       <div><p>viewsimg</p></div>
-      <h5>Intermittent Fasting: Is It the Right Approach for Weight Loss and...</h5>
+      <h3>The Cultural Impact of Video Games: From Pong to eSports</h3>
       <p className='description'>{descriptions}</p>
       </div>
     </SwiperSlide>
