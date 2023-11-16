@@ -14,6 +14,8 @@ import { useNavigate } from "react-router-dom";
 
 const Home = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const [loading, setLoading] = useState(false);
+
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
@@ -41,6 +43,7 @@ const Home = () => {
       }
       
     try {
+        setLoading(true)
         const response = await axios.post(`${api_url}/register`, {
           username,
           email,
@@ -49,6 +52,7 @@ const Home = () => {
         const result = response.data
         console.log(result)
         toast.success("Registration Successful");
+        setLoading(false)
         navigate('/signin')
       } catch (err) {
         console.log(err);
@@ -61,6 +65,8 @@ const Home = () => {
           console.log(err);
           toast.error("Registration failed");
         }
+      }finally{
+        setLoading(false);
       }
     };
 
@@ -101,7 +107,9 @@ const Home = () => {
                   />
                 </div>
               </div>
-              <button type="submit" className='submit'>Sign Up</button>
+              <button className="submit" disabled={loading}>
+          {loading ? 'Loading...' : 'Sign Up'}
+        </button>
             </form>
             <div className="socials1">
             <div className="line">

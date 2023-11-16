@@ -1,12 +1,11 @@
 .sub-section{
-    width: 98%;
+    width: 100%;
     display: flex;
     justify-content: center;
     padding-top: 3%;
-    margin-left: 1%;
 }
 .first-section{
-    width: 45%;
+    width: 55%;
     display:flex;
     justify-content: space-between;
     flex-direction: column;
@@ -51,7 +50,7 @@
     font-size: 12px;
 }
 .second-section{
-    width: 35%;
+    width: 45%;
     display:flex;
     justify-content: space-between;
     flex-direction: column;
@@ -160,12 +159,9 @@
     width: 30%;
     align-items: center;
 }
-.popular1 h3{
-    margin-left: 27.8%;
-    
-}
+
 .construction3{
-    width: 30%;
+    width: 50%;
     height: 27px;
     text-align: center;
     background-color: var(--royal-purple);
@@ -175,7 +171,7 @@
     margin-top: 2%;
 }
 .construction4{
-    width: 30%;
+    width: 50%;
     height: 27px;
     text-align: center;
     background-color: var(--royal-green);
@@ -185,7 +181,7 @@
     margin-top: 2%;
 }
 .construction5{
-    width: 30%;
+    width: 50%;
     height: 27px;
     text-align: center;
     background-color: var(--royal-yellow);

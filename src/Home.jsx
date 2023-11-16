@@ -10,10 +10,11 @@ const Home = () => {
   return (
     <>
     <Navbar/>
+    <div className='container'>
     <Hero/>
     <All/>
 
-    <div className='container'>
+    <div className=''>
     <div className="popular1">
                 <h3>Popular</h3>
                 <p className='construction3'>Sports</p>
@@ -32,6 +33,7 @@ const Home = () => {
 
   
     
+    </div>
     </div>
     <Footer/>
     </>

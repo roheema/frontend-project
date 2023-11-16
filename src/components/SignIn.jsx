@@ -10,16 +10,22 @@ import pic5 from '../assets/images/mdi_apple.png';
 import pic6 from '../assets/images/devicon_google.png';
 import './SignUp.css';
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../AuthContext";
+
 
 
 const Home = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const [loading, setLoading] = useState(false);
+
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };
 
   const navigate = useNavigate()
+  const { setUser } = useAuth(); 
+
 
 
   const api_url = import.meta.env.VITE_REACT_APP_BACKEND_API;
@@ -34,19 +40,23 @@ const Home = () => {
       toast.error('Please fill in all the fields.');
       return;
     }
-    // if (password.length < 6) {
-    //     toast.error("Strong password required");
-    //     return; // Exit early if the password is weak
-    //   }
       
     try {
+        setLoading(true)
         const response = await axios.post(`${api_url}/login`, {
           email,
           password,
         });
+
+        const token = response.data.token; // Assuming the server sends a token on successful login
+        // Store the token securely, e.g., in cookies or local storage
+        setUser(response.data)
+        console.log(response.data.token);
+        localStorage.setItem("authToken", token);
         const result = response.data
         console.log(result)
         toast.success("Login Successful");
+        setLoading(false)
         navigate('/')
       } catch (err) {
         console.log(err);
@@ -59,6 +69,8 @@ const Home = () => {
           console.log(err);
           toast.error("Login failed");
         }
+      }finally{
+        setLoading(false);
       }
     };
 
@@ -99,7 +111,9 @@ const Home = () => {
                   />
                 </div>
               </div>
-              <button type="submit" className='submit'>Sign In</button>
+              <button className="submit" disabled={loading}>
+          {loading ? 'Loading...' : 'Sign In'}
+        </button>
             </form>
             <div className="socials1">
             <div className="line">

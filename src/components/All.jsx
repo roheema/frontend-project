@@ -6,9 +6,6 @@ import img3 from '../assets/images/Ellipse 1.png'
 import img4 from '../assets/images/Frame 21.png'
 import img5 from '../assets/images/Frame 21 (1).png'
 import img6 from '../assets/images/Frame 21 (2).png'
-import CarouselComponent from './CarouselComponent'
-import CarouselComponent2 from './CarouselComponent2'
-import CarouselComponent3 from './CarouselComponent3'
 
 const All = () => {
   return (
