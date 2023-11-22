@@ -13,10 +13,6 @@ const Navbar = () => {
   return (
     <>
    <div>
-  {/* Button trigger modal */}
-  {/* <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-
-  </button> */}
   {/* Modal */}
   <div className="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabIndex={-1} aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div className="modal-dialog">
@@ -39,8 +35,8 @@ const Navbar = () => {
         <h1>BLOGG</h1>
         </div>
         <ul>
-            <li><a href="">Home</a></li>
-            <li><a href="">Blog</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/blog">Blog</a></li>
             <li><a href="">About</a></li>
             <li><a href="">Contact</a></li>
         </ul>
@@ -52,7 +48,7 @@ const Navbar = () => {
     <img src={img1} alt="Dropdown Image" style={{width: 50, height: 50, marginRight: 5}} />
   </a>
   <ul className="dropdown-menu">
-    <li><a className="dropdown-item" href="#"><img src={img2} alt="" /> Edit Profile Picture</a></li>
+    <li><a className="dropdown-item" href="/profile"><img src={img2} alt="" /> Edit Profile Picture</a></li>
     <li><a data-bs-toggle="modal" data-bs-target="#staticBackdrop" className="dropdown-item" href="#"><img src={img3} alt="" /> Logout</a></li>
     
   </ul>

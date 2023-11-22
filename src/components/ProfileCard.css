@@ -1,0 +1,97 @@
+/* BlogProfileCard.css */
+body {
+    overflow-x: hidden;
+  }
+  
+  .profile-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: -1rem !important;
+    /* margin-bottom: 5rem; */
+  }
+  
+  .profile {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+    width: 100%;
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+  }
+  
+  .profile-picture {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-right: 2rem;
+    justify-content: space-between;
+    margin-top: 2rem !important;
+  }
+  
+  .text-container {
+    width: 50% !important;
+    display: flex;
+    word-break: break-all;
+    word-wrap: break-word;
+    flex-direction: column;
+    position: relative;
+    
+  }
+  .para-text {
+    font-size: 0.95rem;
+  }
+  .details {
+    display: block;
+  }
+  
+  .edit-button {
+    align-self: flex-end;
+    position: absolute;
+    right: -18rem;
+    bottom: 5rem;
+  }
+  .edit {
+    background-color: white !important;
+    color: black !important;
+    border: 1px solid #74d5e2 !important;
+  }
+  
+
+/* Media Query for Mobile Screens */
+@media only screen and (max-width: 480px) {
+  .profile-container{
+    margin: auto;
+  }
+  .profile {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .profile-picture {
+    margin-right: 0;
+    margin-bottom: 1rem;
+    margin: auto;
+  }
+
+  .text-container {
+    width: 100% !important;
+    text-align: center;
+  }
+  .details{
+    margin: auto;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    width: 100%;
+  
+  }
+
+  .edit-button {
+    position: static; /* Remove absolute positioning */
+    margin-top: 1rem; /* Add top margin to separate from the text */
+    margin: auto;
+  }
+}

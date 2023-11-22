@@ -16,7 +16,7 @@ const Hero = () => {
         <h1>From You<br />To The World</h1>
         <p>Lorem ipsum dolor sit amet consectetur. Elementum diam volutpat ultrices nisi. Ligula eu aliquet sagittis sit. In justo lectus at rhoncus faucibus nulla sapien.</p>
         {user ? (
-        <a className='clicker' href="/create">Create Blog</a>
+        <a className='clicker' href="/createblog">Create Blog</a>
       ) : (
         <a className='clicker' href="/signup">Get Started</a>
       )}

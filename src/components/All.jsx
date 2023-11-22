@@ -32,7 +32,7 @@ const All = () => {
                     <div className="texts">
                     <div className="constructor">
                         <p className='construction'>Construction</p>
-                    <div className='icon'><img className='eli' src={img3} alt="" />
+                    <div className='people'><img className='eli' src={img3} alt="" />
                     <span>4 mins read</span></div>
                         <span className='dater'>8/08/2023</span>
                     </div>
@@ -49,7 +49,7 @@ const All = () => {
                     <div className="texts">
                     <div className="constructor">
                         <p className='construction1'>Health Care</p>
-                    <div className='icon'><img className='eli' src={img3} alt="" />
+                    <div className='people'><img className='eli' src={img3} alt="" />
                     <span>4 mins read</span></div>
                         <span className='dater'>8/08/2023</span>
                     </div>
@@ -66,7 +66,7 @@ const All = () => {
                     <div className="texts">
                     <div className="constructor">
                         <p className='construction2'>Sports</p>
-                    <div className='icon'><img className='eli' src={img3} alt="" />
+                    <div className='people'><img className='eli' src={img3} alt="" />
                     <span>4 mins read</span></div>
                         <span className='dater'>8/08/2023</span>
                     </div>

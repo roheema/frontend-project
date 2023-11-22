@@ -85,8 +85,8 @@
     display: flex;
 }
 .constructor img{
-    height: 4%;
-    width: 4%;
+    height: 10%;
+    width: 5%;
     margin-right: 4px;
 }
 .construction{
@@ -116,7 +116,7 @@
     padding: 3px;
     border-radius: 5px;
 }
-.icon{
+.people{
     width: 100%;
     font-size: 12px;
     margin-left: 2%;

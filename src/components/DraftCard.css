@@ -1,0 +1,161 @@
+li{
+    list-style-type: none;
+    text-decoration: none;
+    align-content: center;
+    justify-content: space-between;
+    text-align: left;
+}
+
+.published-container,
+.draft-container {
+  display: flex;
+  margin-bottom: 2rem;
+  text-align: left;
+  align-content: start;
+  /* width: 100% */
+   /* Adjust this value as needed */
+}
+.pub-img{
+  /* width: 50%; */
+  justify-content: space-between;
+}
+.text-container{
+  /* display: flex; */
+  width: 100%;
+  margin-left: 10px;
+  /* margin-top: 8rem; */
+  /* justify-content: space-between; */
+}
+.details{
+  display: flex;
+  justify-content: space-between;
+  width: 58%;
+  margin-bottom: -2rem;
+  padding: -5px;
+}
+
+.detail1{
+  width: 15px;
+}
+
+.active, .active:hover, .active:focus, .active:active, .active::after{
+  text-decoration: none !important;
+  outline: none !important;
+  border: none  !important;
+  offset: none !important;
+}
+
+.div{
+  width: 150%;
+}
+.div p{
+    font-size: 0.8rem;
+}
+
+
+.d-img{
+    width: 260px !important;
+    height: 265px !important;
+  /* display: none; */
+}
+
+.self{
+  background-color: #74d5e2;
+  color: white;
+  border-radius: 5px !important;
+  padding: 5px;
+  margin-top: -4px;
+}
+
+
+.vector{
+  align-self: flex-end;
+  position: absolute;
+  right: -19rem;
+  bottom: 12rem;
+}
+
+.vector img{
+  width: 60%;
+}
+
+.mod-mod3{
+    width: 145px !important;
+height: auto;
+margin-top: 10rem;
+margin-left: 32rem;
+right: 30rem;
+}
+
+/* Media Query for Mobile Screens */
+@media only screen and (max-width: 480px) {
+  body {
+    text-align: left; /* Align text to the left */
+  }
+
+  .published-container,
+  .draft-container {
+    flex-direction: column; /* Stack containers vertically on mobile */
+    margin-bottom: 1rem; /* Adjust spacing between containers */
+    align-items: flex-start; /* Align items to the left */
+    text-align: left; /* Align text to the left */
+
+  }
+
+ 
+
+  .text-container {
+    width: 100%;
+    margin-left: 0; /* Remove left margin */
+  }
+
+  .details {
+    display: flex;
+    flex-wrap: wrap; /* Allow details to wrap to the next line on smaller screens */
+    width: 100% !important; /* Take up the full width on mobile */
+    margin-bottom: -2rem; /* Adjust margin */
+    padding: 0; /* Remove padding */
+  }
+
+  .detail1 {
+    width: auto; /* Adjust width as needed on mobile */
+  }
+
+  .div {
+    text-align: left;
+    width: 100% !important; /* Take up the full width on mobile */
+  }
+
+  .div p {
+    font-size: 0.8rem;
+  }
+
+  .d-img {
+    width: 338px !important; /* Take up the full width on mobile */
+    height: auto; /* Auto height for responsiveness */
+    margin-bottom: 1rem; /* Adjust spacing */
+  }
+
+  .self {
+    margin-top: 0; /* Remove top margin */
+  }
+
+  .vector {
+    position: static; /* Remove absolute positioning */
+    margin-top: 1rem; /* Add top margin */
+    margin-bottom: 1rem; /* Add bottom margin */
+    margin-left: 22rem !important;
+  }
+
+  .vector img {
+    width: 100%; /* Take up the full width on mobile */
+  }
+
+  .mod-mod2 {
+    width: 100%; /* Take up the full width on mobile */
+    height: auto; /* Auto height for responsiveness */
+    margin-top: 0; /* Adjust top margin */
+    margin-left: 0; /* Remove left margin */
+    right: 0; /* Align to the right of the screen */
+  }
+}

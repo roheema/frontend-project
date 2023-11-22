@@ -1,0 +1,68 @@
+.head{
+    font-weight: 700;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+  .input-container {
+    position: relative;
+  }
+  .icon{
+    position: absolute;
+    top: 57%;
+    left: 10px; 
+    transform: translateY(-50%);
+    width: 20px;
+    height: auto;
+  }
+  .icon2{
+    position: absolute;
+    top: 39%;
+    left: 95%; 
+    transform: translateY(-50%);
+    width: 20px;
+    height: auto;
+  }
+  
+  .author[type="text"] {
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding-left: 30px; 
+    width: 100%;
+  }
+  .file-input{
+    visibility: hidden;
+  }
+  .input-container4 {
+    width: 70%;
+    height: 60%;
+  }
+  
+  .pub{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+  }
+  .pp{
+    margin-top: 3%;
+    border: none;
+    width: 68%;
+    background-color:  #26BDD2;
+    font-size: 18px;
+    font-family:  Montserrat;
+    word-wrap: break-word;
+    color: white;
+    display: flex
+  }
+  .ss{
+    border: none;
+    margin-top: 3%;
+    color: black;
+    width: 30%;
+    display: flex;
+    font-size: 18px;
+    font-family: montserrat;
+    font-weight: 500;
+    word-wrap: break-word;
+  }

@@ -6,6 +6,13 @@ import SignIn from './components/SignIn'
 import Home from './Home';
 import Logout from './components/Logout';
 import { Toaster } from 'react-hot-toast';
+import CreateBlog from './components/CreateBlog'
+import BlogProfile from './pages/Profile';
+import Draft from './pages/Drafts'
+import EditPost from './pages/EditPost';
+import BlogDetail from './pages/BlogDetail'
+import Blog from './pages/Blog'
+
 const App = () => {
   return (
     <>
@@ -14,9 +21,16 @@ const App = () => {
       
       <Routes>
         <Route path="/signup" element={<SignUp/>}/>
+        <Route path="/blog" element={<Blog/>}/>
         <Route path="/signin" element={<SignIn/>}/>
         <Route path="/" element={<Home/>}/>
         <Route path='/logout' element={<Logout />} />
+        <Route path='/createblog' element={<CreateBlog />} />
+        <Route path='/draft' element={<Draft/>}/>
+        <Route path='/profile' element={<BlogProfile/>}/>
+        <Route path='/blogger/:_id' element={<EditPost/>}/>
+        <Route path='/blog/:_id' element={<BlogDetail/>}/>
+
       </Routes>
       </BrowserRouter>
       
