@@ -16,37 +16,39 @@ import Footer from './components/Footer';
 import PrivateRoutes from "./pages/PrivateRoutes";
 
 
+// ... (imports)
+
 const App = () => {
   return (
     <>
-    <Toaster/>
+      <Toaster />
       <BrowserRouter>
-      
-      <Routes>
-        <Route path="/signup" element={<SignUp/>}/>
-        <Route path="/blog" element={<Blog/>}/>
-        <Route path="/signin" element={<SignIn/>}/>
-        <Route path="/" element={<Home/>}/>
-        <Route path='/logout' element={<Logout />} />
-        <Route path='/blog/:_id' element={<BlogDetail/>}/>
-        {/* Protected Routes */}
-        <Route path="/" element={<PrivateRoutes />}>
-        <Route path='createblog' element={<CreateBlog />} />
-        <Route path='draft' element={<Draft/>}/>
-        <Route path='profile' element={<BlogProfile/>}/>
-        <Route path='blogger/:_id' element={<EditPost/>}/>
-        </Route>
+        <Routes>
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/signin" element={<SignIn />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/logout" element={<Logout />} />
+          <Route path="/blog/:_id" element={<BlogDetail />} />
 
-
-      </Routes>
-      <Footer/>
+          {/* Protected Routes */}
+          <Route
+            path="/"
+            element={
+              <PrivateRoutes>
+                <Route path="createblog" element={<CreateBlog />} />
+                <Route path="draft" element={<Draft />} />
+                <Route path="profile" element={<BlogProfile />} />
+                <Route path="blogger/:_id" element={<EditPost />} />
+              </PrivateRoutes>
+            }
+          />
+        </Routes>
+        <Footer />
       </BrowserRouter>
-      
-    
-    
-
     </>
-  )
-}
+  );
+};
+
 
 export default App
