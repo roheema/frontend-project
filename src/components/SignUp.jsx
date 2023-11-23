@@ -8,7 +8,7 @@ import pic2 from '../assets/images/Frame 1000002375.png';
 import pic4 from '../assets/images/logos_facebook.png';
 import pic5 from '../assets/images/mdi_apple.png';
 import pic6 from '../assets/images/devicon_google.png';
-import './SignUp.css';
+import './Signup.css';
 import { useNavigate } from "react-router-dom";
 
 
