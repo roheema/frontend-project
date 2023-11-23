@@ -85,7 +85,7 @@ const Publish = () => {
                     <p className="self">{blog.category}</p>
                     <span>
                       <img src={v1} alt="" className="detail" />
-                      {blog.viewCount} 3 views
+                      {blog.viewCount} 5 views
                     </span>
                     <span>
                       <img src={v2} alt="" /> {blog.readCount} 4 mins reads
@@ -137,15 +137,15 @@ const Publish = () => {
         </Modal>
 
       <div className="pagination">
-        <button onClick={() => paginate(currentPage - 1)} disabled={currentPage === 1}>
+        <button className="previous bg-primary text-light" onClick={() => paginate(currentPage - 1)} disabled={currentPage === 1}>
           Previous
         </button>
         {Array.from({ length: pages }).map((_, index) => (
-          <button key={index} onClick={() => paginate(index + 1)}>
+          <button className="no bg-danger text-light" key={index} onClick={() => paginate(index + 1)}>
             {index + 1}
           </button>
         ))}
-        <button onClick={() => paginate(currentPage + 1)} disabled={currentPage === pages}>
+        <button className="next bg-primary text-light" onClick={() => paginate(currentPage + 1)} disabled={currentPage === pages}>
           Next
         </button>
       </div>

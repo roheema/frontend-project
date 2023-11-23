@@ -5,6 +5,7 @@ import v1 from "../assets/images/Ellipse 1.png";
 import './ProfileCard.css';
 import Navbar from './Navbar';
 
+
 const BlogProfileCard = () => {
   const [isEditing, setIsEditing] = useState(false);
   const [user, setUser] = useState('Jane Doe');
@@ -18,6 +19,11 @@ const BlogProfileCard = () => {
     const storedUser = localStorage.getItem('user');
     const storedDescription = localStorage.getItem('description');
     const storedImageUrl = localStorage.getItem('imageUrl');
+      const storedUsername = localStorage.getItem("auth");
+      const parsedUsername = storedUsername ? JSON.parse(storedUsername).user.username : "";
+      setUser(parsedUsername);
+      // console.log(parsedUsername)
+
 
     if (storedUser) setUser(storedUser);
     if (storedDescription) setDescription(storedDescription);
@@ -59,6 +65,8 @@ const BlogProfileCard = () => {
     // Reload the page to reflect the changes
   window.location.reload();
   };
+  
+
 
   return (
     <>
@@ -74,8 +82,8 @@ const BlogProfileCard = () => {
             {isEditing ? (
               <Form>
                 <Form.Group controlId="formName">
-                  <Form.Label>Name</Form.Label>
-                  <Form.Control type="text" value={user} onChange={handleNameChange} />
+                  {/* <Form.Label>Name</Form.Label> */}
+                  {/* <Form.Control type="text" value={user.username} onChange={handleNameChange} disable /> */}
                 </Form.Group>
                 <Form.Group controlId="formDescription">
                   <Form.Label>Description</Form.Label>

@@ -88,12 +88,12 @@ const DraftCard = () => {
                   <p className="self">{blog.category}</p>
                   <span>
                     <img src={v1} alt="" className="detail" />
-                    {blog.viewCount} views
+                    {blog.viewCount} 3 views
                   </span>
                   <span>
-                    <img src={v2} alt="" /> {blog.readCount} mins read
+                    <img src={v2} alt="" /> {blog.readCount} 4 mins read
                   </span>
-                  <p className="date">{blog.timestamps}</p>
+                  {/* <p className="date">{blog.timestamps}</p> */}
                 </div>
                 <div className="div">
                   <b>{blog.title}</b>
@@ -137,15 +137,15 @@ const DraftCard = () => {
                   </Modal.Body>
                 </Modal>
        <div className="pagination">
-        <button onClick={() => paginate(currentPage - 1)} disabled={currentPage === 1}>
+        <button className="previous bg-primary text-light" onClick={() => paginate(currentPage - 1)} disabled={currentPage === 1}>
           Previous
         </button>
         {Array.from({ length: pages }).map((_, index) => (
-          <button key={index} onClick={() => paginate(index + 1)}>
+          <button className="no bg-danger text-light" key={index} onClick={() => paginate(index + 1)}>
             {index + 1}
           </button>
         ))}
-        <button onClick={() => paginate(currentPage + 1)} disabled={currentPage === pages}>
+        <button className="next bg-primary text-light" onClick={() => paginate(currentPage + 1)} disabled={currentPage === pages}>
           Next
         </button>
       </div>

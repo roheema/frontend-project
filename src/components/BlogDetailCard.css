@@ -8,17 +8,17 @@
     font-family: 'Montserrat' sans-serif;
 }
 
-.header{
+.header9{
     font-weight: 600;
     font-size: 50px;
 }
-.line2{
+.line9{
     width: 40%;
     display: flex;
     justify-content: space-between;
     margin-bottom: 25px;
 }
-.self{
+.self9{
     background-color: #26BDD2;
     color: #ffffff;
     font-size: 14px;
@@ -33,8 +33,10 @@
     display: flex;
     overflow: hidden;
 }
-
-.box{
+.singleman{
+    height: 600px;
+}
+.box9{
     width: 450px;
     height: 400px;
     text-align: center;
@@ -42,10 +44,10 @@
     float: left ;
     margin-right: 30px;
 }
-.box img{
+.box9 img{
     width: 100%;
 }
-.play{
+.play9{
     clear: right;
     text-align: justify;
 }

@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Createblog.css";
 import img1 from "../assets/images/basil_edit-solid.png";
 import img2 from "../assets/images/mdi_tag.png";
 import img3 from "../assets/images/ic_round-image.png";
-import img4 from "../assets/images/tdesign_time-filled.png";
 import Navbar from "./Navbar";
 import axios from "axios";
 import toast from "react-hot-toast";
@@ -17,24 +16,24 @@ function CreateBlog() {
   const [category, setCategory] = useState("");
   const [image, setImage] = useState(null);
   const [publishLoading, setPublishLoading] = useState(false);
-  const [draftsLoading, setDraftsLoading] = useState(false);
 
     const navigate = useNavigate();
     const { token } = useAuth();
 
-  //   console.log("Token:", token);
-  //   if (!token) {
-  //     return <Navigate to="/login" />;
-  //   }
+    useEffect(() => {
+      const storedUsername = localStorage.getItem("auth");
+      const parsedUsername = storedUsername ? JSON.parse(storedUsername).user.username : "";
+      setAuthor(parsedUsername);
+      // console.log(parsedUsername)
+
+    }, []);
 
   const handleSubmit = async (e, isDraft) => {
     e.preventDefault();
 
-    if (isDraft) {
-        setDraftsLoading(true);
-      } else {
+    
         setPublishLoading(true);
-      }
+      
 
     const formData = new FormData();
     formData.append("title", title);
@@ -55,7 +54,7 @@ function CreateBlog() {
 
       if (data?.message === "Blog created successfully") {
         toast.success("Blog created successfully");
-        navigate("/");
+        navigate("/profile");
       } else {
         toast.error("Failed to create a blog. Please try again.");
       }
@@ -63,11 +62,9 @@ function CreateBlog() {
       toast.error("An error occurred while creating the blog.");
       console.error("Error:", error);
     } finally {
-        if (isDraft) {
-            setDraftsLoading(false);
-          } else {
+         
             setPublishLoading(false);
-          }
+          
     }
   };
   return (
@@ -93,7 +90,7 @@ function CreateBlog() {
               </div>
             </div>
 
-            <div className="pro1">
+            <div className="pro1 mt-3">
               <label htmlFor="Tag">Author</label>
               <br />
               <div className="input-container">
@@ -105,21 +102,24 @@ function CreateBlog() {
                   value={author}
                   onChange={(e) => setAuthor(e.target.value)}
                   required
+                  disabled
                 />
               </div>
-              <div className="input-container">
+              <div className="input-container mt-3">
+              <label htmlFor="Tag">Category</label>
                 <input
                   className="author"
                   type="text"
-                  placeholder="Category"
+                  placeholder="Write a category for your post"
                   value={category}
                   onChange={(e) => setCategory(e.target.value)}
                   required
+                  
                 />
               </div>
             </div>
 
-            <div className="pro2">
+            <div className="pro2 mt-3">
               <label htmlFor="Text">Add your cover image here</label>
               <div className="input-container form-group">
                   <input
@@ -132,7 +132,7 @@ function CreateBlog() {
               </div>
             </div>
 
-            <div className="pro3">
+            <div className="pro3 mt-3">
               <label htmlFor="Read time">Content</label>
               <div className="input-container">
                 <textarea
@@ -148,19 +148,12 @@ function CreateBlog() {
       <button
         className="pp"
         type="submit"
-        disabled={publishLoading || draftsLoading}
+        disabled={publishLoading}
         onClick={(e) => handleSubmit(e, false)}
       >
-        {publishLoading ? "Loading" : "Publish"}
+        {publishLoading ? "Loading" : "Save to Drafts"}
       </button>
-      <button
-        className="ss"
-        type="submit"
-        disabled={publishLoading || draftsLoading}
-        onClick={(e) => handleSubmit(e, true)}
-      >
-        {draftsLoading ? "Loading" : "Save to Drafts"}
-      </button>
+      
     </div>
           </form>
         </div>

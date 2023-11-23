@@ -47,6 +47,7 @@ li{
 
 .div{
   width: 150%;
+  margin-top: 10%;
 }
 .div p{
     font-size: 0.8rem;
@@ -158,4 +159,22 @@ right: 30rem;
     margin-left: 0; /* Remove left margin */
     right: 0; /* Align to the right of the screen */
   }
+}
+.pagination{
+  width:70%;
+  display: flex;
+  justify-content: space-around;
+  color:white;
+}
+.previous{
+  border:none;
+  width:50%;
+}
+.next{
+  border:none;
+  width:50%;
+}
+.no{
+  border:none;
+  width:50%;
 }

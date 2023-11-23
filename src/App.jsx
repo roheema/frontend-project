@@ -12,6 +12,9 @@ import Draft from './pages/Drafts'
 import EditPost from './pages/EditPost';
 import BlogDetail from './pages/BlogDetail'
 import Blog from './pages/Blog'
+import Footer from './components/Footer';
+import PrivateRoutes from "./pages/PrivateRoutes";
+
 
 const App = () => {
   return (
@@ -25,13 +28,18 @@ const App = () => {
         <Route path="/signin" element={<SignIn/>}/>
         <Route path="/" element={<Home/>}/>
         <Route path='/logout' element={<Logout />} />
-        <Route path='/createblog' element={<CreateBlog />} />
-        <Route path='/draft' element={<Draft/>}/>
-        <Route path='/profile' element={<BlogProfile/>}/>
-        <Route path='/blogger/:_id' element={<EditPost/>}/>
         <Route path='/blog/:_id' element={<BlogDetail/>}/>
+        {/* Protected Routes */}
+        <Route path="/" element={<PrivateRoutes />}>
+        <Route path='createblog' element={<CreateBlog />} />
+        <Route path='draft' element={<Draft/>}/>
+        <Route path='profile' element={<BlogProfile/>}/>
+        <Route path='blogger/:_id' element={<EditPost/>}/>
+        </Route>
+
 
       </Routes>
+      <Footer/>
       </BrowserRouter>
       
     

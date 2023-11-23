@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 
 
 const EditBlog = () => {
-  const { _id } = useParams(); // Fix: Add parentheses to useParams function call
+  const { _id } = useParams();
   const navigate = useNavigate();
 
   const [blogData, setBlogData] = useState({
@@ -27,7 +27,7 @@ const EditBlog = () => {
     try {
       const response = await axios.get(`${api_url}/blog/${_id}`);
       const blog = response.data;
-      setBlogData(blog); // Fix: Pass 'blog' data to setBlogData
+      setBlogData(blog);
       setLoading(false);
     } catch (err) {
       console.log(err);
@@ -39,28 +39,41 @@ const EditBlog = () => {
   }, [_id]);
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
+    const { name, value, files } = e.target;
+
+    // Check if the input is a file input
+    const newValue = files ? files[0] : value;
+
     setBlogData((prevData) => ({
       ...prevData,
-      [name]: value,
+      [name]: newValue,
     }));
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    const formData = new FormData();
+    formData.append("title", blogData.title);
+    formData.append("content", blogData.content);
+    formData.append("author", blogData.author);
+    formData.append("state", blogData.state);
+    formData.append("category", blogData.category);
+    formData.append("imageUrl", blogData.image); // Assuming 'image' is the key for the image file
+
     try {
-      await axios.put(`${api_url}/blogger/${_id}`, blogData, {
-        headers:  {
-          "Content-Type": "multipart/form-data"
-        }
+      await axios.put(`${api_url}/blogger/${_id}`, formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
       });
+
       console.log("Blog updated successfully!");
-      toast.success('Blog updated successfully!');
-      // Navigate back to the profile page after successful update
+      toast.success("Blog updated successfully!");
       navigate("/profile");
     } catch (err) {
       console.log(err);
-      toast.error('Error updating blog. Please try again.');
+      toast.error("Error updating blog. Please try again.");
     }
   };
 
@@ -126,13 +139,14 @@ const EditBlog = () => {
             />
           </div>
           <div className="form-control my-3">
-            <label>Image URL:</label>
-            <input
+            <label htmlFor="image">Choose Image:</label>
+          <input
+            type="file"
+            accept="image/*"
+            name="image"
+            onChange={handleChange}
+          />
             
-              type="file"
-              name="imageUrl"
-              onChange={handleChange} // Fix: No need to set value for file input
-            />
           </div>
           <button className="btn btn-primary" type="submit">Save Changes</button>
         </form>

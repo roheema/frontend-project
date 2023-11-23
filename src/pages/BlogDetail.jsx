@@ -9,11 +9,13 @@ const BlogDetail = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const { _id } = useParams();
+  const api_url = import.meta.env.VITE_REACT_APP_BACKEND_API;
+
 
   const fetchApi = async () => {
     try {
-        const response = await axios.get(`/blog/${_id}`);      
-        const blog = response.data;
+        const response = await axios.get(`${api_url}/blog/${_id}`);      
+        const blog = response?.data;
       setData(blog);
       setLoading(false);
     } catch (err) {
@@ -30,7 +32,6 @@ const BlogDetail = () => {
       
       {loading && (
         <div className="loading">
-          {/* <img src={loader} alt="" /> */}
         </div>
       )}
       {data && (

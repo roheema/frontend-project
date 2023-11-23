@@ -47,14 +47,18 @@ const Home = () => {
           email,
           password,
         });
-
-        const token = response.data.token; // Assuming the server sends a token on successful login
+        // const auth  = response.data.user
+        const token = response.data.token; 
+        
+        // Assuming the server sends a token on successful login
         // Store the token securely, e.g., in cookies or local storage
-        setUser(response.data)
-        console.log(response.data.token);
+        // setUser(auth);
+        // console.log(response.data.token);
         localStorage.setItem("authToken", token);
+        localStorage.setItem("auth", JSON.stringify(response.data));
         const result = response.data
-        console.log(result)
+        setUser({  token: token, user: result.user });
+        // console.log(result)
         toast.success("Login Successful");
         setLoading(false)
         navigate('/')
