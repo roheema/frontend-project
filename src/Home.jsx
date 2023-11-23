@@ -25,11 +25,11 @@ const Home = () => {
                 <p className='construction4'>Health Care</p>
             </div>
             <CarouselComponent2/>
-            <div className="popular1">
+            {/* <div className="popular1">
                 <h3>Popular</h3>
                 <p className='construction5'>Entertainment</p>
             </div>
-            <CarouselComponent3/>
+            <CarouselComponent3/> */}
 
   
     
