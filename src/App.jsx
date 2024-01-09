@@ -32,18 +32,14 @@ const App = () => {
           <Route path="/blog/:_id" element={<BlogDetail />} />
 
           {/* Protected Routes */}
-          <Route
-            path="/"
-            element={
-              <PrivateRoutes>
-                <Route path="createblog" element={<CreateBlog />} />
-                <Route path="draft" element={<Draft />} />
-                <Route path="profile" element={<BlogProfile />} />
-                <Route path="blogger/:_id" element={<EditPost />} />
-              </PrivateRoutes>
-            }
-          />
-        </Routes>
+          <Route path='/' element={<PrivateRoutes/>}>
+            <Route path='profile' element={<BlogProfile/>}/>
+            <Route path='draft' element={<Draft/>}/>
+            <Route path='edit' element={<EditPost/>}/>
+            <Route path='create' element={<CreateBlog/>}/>
+            
+            </Route>
+          </Routes>
         <Footer />
       </BrowserRouter>
     </>

@@ -9,6 +9,7 @@ const Navbar = () => {
 
 
   const { user } = useAuth();
+  
 
   return (
     <>

@@ -8,7 +8,8 @@ const Logout = () => {
 
   useEffect(() => {
     // Clear the authentication token (or session)
-    localStorage.removeItem("authToken"); // Adjust this according to how you store the token
+    localStorage.removeItem("authToken");// Adjust this according to how you store the token
+    localStorage.removeItem("auth");// Adjust this according to how you store the token
 
     // Redirect to the home page
     navigate("/");
